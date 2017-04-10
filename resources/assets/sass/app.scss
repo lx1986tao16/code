@@ -147,6 +147,13 @@ section.user_info {
     border-radius: 50%;
 }
 
+#logout {
+  cursor: default;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
 /* forms */
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
