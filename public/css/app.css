@@ -4344,13 +4344,13 @@ a.thumbnail.active {
   .alert-success .alert-link {
     color: #2b542c; }
 
-.alert-info {
+.alert-info, .alert-status {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #31708f; }
-  .alert-info hr {
+  .alert-info hr, .alert-status hr {
     border-top-color: #a6e1ec; }
-  .alert-info .alert-link {
+  .alert-info .alert-link, .alert-status .alert-link {
     color: #245269; }
 
 .alert-warning {
@@ -5836,5 +5836,45 @@ section.user_info {
   margin-right: 10px;
   max-width: 50px;
   border-radius: 50%; }
+
+#logout {
+  cursor: default; }
+  #logout:hover {
+    background-color: transparent; }
+
+/* forms */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px; }
+
+input {
+  height: auto !important; }
+
+.panel {
+  margin-top: 50px; }
+
+/* Users edit */
+.gravatar_edit {
+  margin: 15px auto;
+  text-align: center; }
+  .gravatar_edit .gravatar {
+    float: none;
+    max-width: 100px; }
+
+/* Users index */
+.users {
+  list-style: none;
+  margin: 0;
+  padding-left: 0; }
+  .users li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee; }
+
+.delete-btn {
+  float: right;
+  position: relative;
+  right: 0; }
 
 /*# sourceMappingURL=app.css.map */
