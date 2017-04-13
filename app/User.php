@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Status;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -50,5 +51,15 @@ class User extends Model implements AuthenticatableContract,
         static::creating(function($user){
             $user->activation_token = str_random(30);
         });
+    }
+
+    public function statuses()
+    {
+        return $this->hasMany(Status::class);
+    }
+
+    public function feed()
+    {
+        return $this->statuses()->orderBy('created_at', 'desc');
     }
 }
