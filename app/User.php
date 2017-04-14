@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Auth;
 use App\Status;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -60,7 +61,10 @@ class User extends Model implements AuthenticatableContract,
 
     public function feed()
     {
-        return $this->statuses()->orderBy('created_at', 'desc');
+        // return $this->statuses()->orderBy('created_at', 'desc');
+        $user_ids = Auth::user()->followings->pluck('id')->toArray();
+        array_push($user_ids, Auth::user()->id);
+        return Status::whereIn('user_id', $user_ids)->with('user')->orderBy('created_at', 'desc');
     }
 
     public function followers()
